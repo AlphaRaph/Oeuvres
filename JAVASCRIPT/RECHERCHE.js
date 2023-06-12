@@ -1,6 +1,6 @@
 function effectuerRecherche() {
     const searchedValue = searchBar.value;
-    var urlRecherche = "catalogue.html?search=" + encodeURIComponent(searchedValue);
+    var urlRecherche = "/HTML/catalogue.html?search=" + encodeURIComponent(searchedValue);
     window.location.href = urlRecherche;
 }
 
