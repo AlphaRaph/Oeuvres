@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- En tête : (CSS ; JAVASCRIPT ; METADONNEES ; TITRE) -->
+<head>
+    <link rel="stylesheet" href="../CSS/CSS.css">
+    <link rel="stylesheet" href="../CSS/MENU-BURGER.css">
+    <link rel="stylesheet" href="../CSS/HEADER.css">
+    <link rel="stylesheet" href="../CSS/FOOTER.css">
+    <script src="../JAVASCRIPT/RECHERCHE.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oeuvres V5</title>
+</head>
+
+<!-- Corps de la page : (HEADER ; MAIN ; FOOTER)  -->
+<body>
+
+    <!-- Header : (UN ; DEUX ; TROIS) -->
+    <header>
+        <nav class="orga">
+
+            <!-- Un : (MENU ; LOGO) -->
+            <div class="un">
+
+                <!-- Logo -->
+                <div class="Logo">
+                    <a href="HTML.html" > <img src="../PICTURES/HEADER/Logo BOURIGAULT Jade.png" alt="Logo"> </a>
+                </div>
+            </div>
+            
+            <!-- Deux : (SEARCH-BAR ; LOUPE) -->
+            <div class="deux">
+                <form action="catalogue.html">
+                    <div class="search-bar">
+                        <input id="search-bar" type="text" value="" placeholder="Rechercher un article" name="search">    
+                        <input type="submit" value="Envoyer les données" id="submit0" style="display: none;">
+                        <label for="submit0">
+                            <img src="../PICTURES/HEADER/loupe.png" alt="Bouton de recherche" class="loupe-image" onclick="effectuerRecherche()">          
+                        </label>  
+                    </div>
+                </form>
+            </div>
+
+            <!-- Trois : (PANIER ; CONNEXION) -->
+            <div class="trois">
+
+                <!-- Panier : (ICON ; TITRE) -->
+                <div class="panier">
+                    <a href="#">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/amascaoj.json"
+                            trigger="hover"
+                            colors="primary:#ffffff"
+                            state="hover-2"
+                            style="width:5vh;height:5vh">
+                        </lord-icon>
+                        <p> A propos </p>
+                    </a>
+                </div>
+
+                <div>
+                <!-- Connexion : (ICON ; TITRE) -->
+                <div class="connexion">
+                    <a href="#">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/fpmskzsv.json"
+                            trigger="hover"
+                            colors="primary:#ffffff"
+                            style="width:5vh;height:5vh">
+                        </lord-icon>
+                        <p>Ajouter</p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+</main>
+</body>
+
+</html>
