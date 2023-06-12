@@ -1,4 +1,4 @@
-const reponse = await fetch("../JSON/oeuvres.json");
+const reponse = await fetch("JSON/oeuvres.json");
 const items = await reponse.json();
 
 const FILTERS_SECTION = document.querySelector(".filters-section");
