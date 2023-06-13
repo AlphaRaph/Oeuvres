@@ -225,14 +225,13 @@ const searchBarInput = document.querySelector("#search-bar");
 console.log("searchBarInput : ", searchBarInput);
 //searchBarInput.addEventListener("input", update);
 
-// Catégories
 const categoriesNames = ["representation", "image", "materialite", "processus", "presentation"];
 const categoriesInputs = [];
-// On récupère d'abord les catégories et on les relie à la fonction filter
+
 for (let i = 0; i < categoriesNames.length; i++) {
-    const categoryInput = document.querySelector("#" + categoriesNames[i] + "-filter")
-    categoryInput.addEventListener("change", changeURL)
-    categoriesInputs.push(categoryInput); // .append
+    const categoryInput = document.querySelector("#" + categoriesNames[i] + "-filter");
+    categoryInput.addEventListener("input", changeURL);
+    categoriesInputs.push(categoryInput);
 }
 
 initialize(); // Actualisation des filtres et de la seach bar en fonction de l'URL
