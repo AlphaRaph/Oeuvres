@@ -5,6 +5,7 @@ header {
     background-image: url("../PICTURES/HEADER/Bandeau\ Maya.jpeg") ;
     background-position: center right;
     background-size: 100% ;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Paramètres des liens du header */
