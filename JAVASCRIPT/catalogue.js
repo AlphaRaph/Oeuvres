@@ -65,7 +65,7 @@ function difference(wordA, wordB) {
         }
         // Sinon on enlève le caractère de la liste pour ne pas le compter deux fois
         else {
-            caracters.splice(index, 1);
+            caracters.slice(index, 1);
         }
     }
 
@@ -137,13 +137,15 @@ function distance(categories, item) {
     return sum ** 0.5;
 }
 
-function filter(categories, items) {
-    /* (bool, dict, list) -> list
+function filter(maxPrice, minPrice, categories, items) {
+    /* (bool, int, int, dict, list) -> list
     Renvoie la liste d'items triée pour correspondre au mieux au filtres sélectionées */
     const ordonnedItems = Array.from(items);
 
-    /// On commence par les filtres qui suppriment des oeuvres
+    /// On commence par les filtres qui suppriment des ouevres
     // On sélectionne seulement les oeuvres dans la tranche de prix
+    ordonnedItems.filter(item => item.price >= minPrice && item.price <= maxPrice);
+
     console.log(categories);
     /// Ensuite on s'attaque aux filtres qui ordonnent les oeuvres (les catégories)
     // Pour cela on calcule la distance en N dimensions entre les filtres sélectionnées et l'oeuvre pour ne pas les calculer plusieurs fois
@@ -166,6 +168,8 @@ function update() {
     /* Fonction principale qui affiche tous les éléments en fonction des filtres et de la recherche */
 
     // On récupère tous les valeurs de tous les filtres
+    const maxPrice = maxPriceInput.input;
+    const minPrice = minPriceInput.input;
     const categories = new Map();
     for (let i = 0; i < categoriesInputs.length; i++) {
         categories.set(categoriesNames[i], categoriesInputs[i].value);
@@ -176,7 +180,7 @@ function update() {
     if (searchBarInput.value != "") {
         searchedItems  = search(searchBarInput.value, items);
     }
-    const ordonnedItems = filter(categories, searchedItems);
+    const ordonnedItems = filter(maxPrice, minPrice, categories, searchedItems);
     
     updateItems(ordonnedItems);
 }
@@ -185,6 +189,8 @@ function changeURL() {
     /* Fonction qui change l'url pour pour actualiser les filtres */
     
     // On récupère tous les valeurs de tous les filtres
+    const maxPrice = maxPriceInput.input;
+    const minPrice = minPriceInput.input;
     const categories = new Map();
     for (let i = 0; i < categoriesInputs.length; i++) {
         categories.set(categoriesNames[i], categoriesInputs[i].value);
@@ -225,14 +231,20 @@ const searchBarInput = document.querySelector("#search-bar");
 console.log("searchBarInput : ", searchBarInput);
 //searchBarInput.addEventListener("input", update);
 
+// Catégories
 const categoriesNames = ["representation", "image", "materialite", "processus", "presentation"];
 const categoriesInputs = [];
-
+// On récupère d'abord les catégories et on les relie à la fonction filter
 for (let i = 0; i < categoriesNames.length; i++) {
-    const categoryInput = document.querySelector("#" + categoriesNames[i] + "-filter");
-    categoryInput.addEventListener("input", changeURL);
-    categoriesInputs.push(categoryInput);
+    const categoryInput = document.querySelector("#" + categoriesNames[i] + "-filter")
+    categoryInput.addEventListener("change", changeURL)
+    categoriesInputs.push(categoryInput); // .append
 }
+// Autres filtres
+const maxPriceInput = document.querySelector("#max-price-filter");
+maxPriceInput.addEventListener("input", update);
+const minPriceInput = document.querySelector("#min-price-filter");
+minPriceInput.addEventListener("input", update);
 
 initialize(); // Actualisation des filtres et de la seach bar en fonction de l'URL
 update(); // Acualisation des oeuvres en fonction des filtres et de la search bar
