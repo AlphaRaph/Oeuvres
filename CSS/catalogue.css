@@ -24,7 +24,7 @@ body {
 
 /* ===================== LES ARTICLES ======================= */
 .items-section {
-    color : grey;
+    color : white;
     margin: 0px 100px;
     display: flex;
     flex-wrap: wrap;
