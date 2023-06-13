@@ -65,7 +65,7 @@ function difference(wordA, wordB) {
         }
         // Sinon on enlève le caractère de la liste pour ne pas le compter deux fois
         else {
-            caracters.slice(index, 1);
+            caracters.splice(index, 1);
         }
     }
 
