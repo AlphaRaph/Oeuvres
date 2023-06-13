@@ -185,8 +185,6 @@ function changeURL() {
     /* Fonction qui change l'url pour pour actualiser les filtres */
     
     // On récupère tous les valeurs de tous les filtres
-    const maxPrice = maxPriceInput.input;
-    const minPrice = minPriceInput.input;
     const categories = new Map();
     for (let i = 0; i < categoriesInputs.length; i++) {
         categories.set(categoriesNames[i], categoriesInputs[i].value);
