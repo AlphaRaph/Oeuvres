@@ -5,8 +5,6 @@ function effectuerRecherche() {
 }
 
 const searchBar = document.querySelector("#search-bar");
-console.log("searchBAR : ", searchBar);
 searchBar.addEventListener("change", effectuerRecherche);
 const loupe = document.querySelector(".loupe-image");
 loupe.addEventListener("click", effectuerRecherche);
-console.log("He he !")

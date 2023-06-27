@@ -40,48 +40,58 @@ function updateItems (items) {
 }
 
 
-function difference(wordA, wordB) {
+function similarity(wordA, wordB) {
     /* Fonction qui compare deux mots et qui dit s'ils sont similaires ou différents
     Retourne une valeur en 0 et 1:
-    - 0 : les deux mots sont identiques
-    - 1 : les deux mots n'ont rien à voir 
-    Complexité : wordA.length * wordB.length */
+    - 1 : les deux mots sont identiques
+    - 0 : les deux mots n'ont rien à voir 
+    Complexité : wordA.length * wordB.length 
+    Inventé par Raphaël BELLIOT (j'en suis très fier)*/
 
-    let cptDiff = 0;
     // On met tout en minuscule pour éviter les problèmes
     wordA = wordA.toLowerCase();
     wordB = wordB.toLowerCase();
+    // On regarde quel mot est le plus petit
+    var shortWord = (wordA.length <= wordB.length) ? wordA : wordB;
+    var longWord =  (wordA.length > wordB.length) ? wordA : wordB;
+    var shortSize = shortWord.length;
+    var longSize = longWord.length;
 
     let caracters = wordA.split("");
-    console.log(caracters);
-    for (let i = 0; i < wordB.length; i++) {
 
-        // On regarde si le caractère est dans le mot A
-        console.log(wordB[i]);
-        let index = caracters.indexOf(wordB[i]);
-        // Si le mot A ne contient pas le caractère alors on incrémente le nombre de différences
-        if (index == -1) {
-            cptDiff++;
+    // On parcourt le plus grand mot pour calculer les différences avec le petit
+    // On le parcours plusieurs fois en décalant le petit mot pour faire face au préfixe
+    // Les espaces on s'en fout
+    var maxSimi = 0;
+    for (let start = -shortSize; start < longSize; start++) {
+        var cptSimi = 0;
+        for (let i = 0; i < shortSize; i++) {
+            // A chaque on compare avec la lettre avant et après pour éviter d'éliminer les fautes de frappes
+            for (let j = -1; j <= 1; j++) {
+                var pos = start + i + j;
+                if (pos >= 0 && pos < longSize) {
+                    if (shortWord[i] == longWord[pos]) {
+                        cptSimi += 1;
+                        break;
+                    }
+                }
+            }
         }
-        // Sinon on enlève le caractère de la liste pour ne pas le compter deux fois
-        else {
-            caracters.slice(index, 1);
+        if (cptSimi > maxSimi) {
+            maxSimi = cptSimi;
         }
+        // console.log(`simi ${shortWord} vs ${longWord} start ${start} : ${cptSimi}`);
     }
 
-    // Si le mot A est plus long, alors il faut ajouter la différence de taille entre les deux mots
-    // Si le mot B est plus long, la différence de taille est déjà comptée dans la boucle puisqu'il ne trouve pas le caractère
-    if (wordA.length > wordB.length) {
-        cptDiff += Math.abs(wordA.length - wordB.length); // Compte les espaces entre le deux mots que je considère comme des différences
-        console.log(`diff ${wordA} vsa ${wordB} : `, cptDiff);
-        return cptDiff / wordA.length;
-    }
-    else {
-        console.log(`diff ${wordA} vs ${wordB} : `, cptDiff);
-        return cptDiff / wordB.length; // On renvoie à chaque fois sur le plus grand mot pour que ce soit plus petit que 1
-    }
+    console.log(`simi ${longWord} vs ${shortWord} : `, maxSimi);
+    var ratio = maxSimi / longSize;
+    console.log("ratio : " + ratio);
+    var similarity = ratio ** 2;
+    console.log("similarity : " + similarity);
+
+    return similarity;
 }
-function sentenceDifference(sentenceA, sentenceB) {
+function sentenceSimiliraty(sentenceA, sentenceB) {
     console.log("sentence A : ", sentenceA);
     console.log("sentence B : ", sentenceB);
     let wordsA = sentenceA.split(" ");
@@ -92,11 +102,9 @@ function sentenceDifference(sentenceA, sentenceB) {
     let somme = 0 // Somme des différences entre les mots
     for (let i = 0; i < wordsA.length; i++) {
         let wordA = wordsA[i];
-        console.log("aie");
         for (let j = 0; j < wordsB.length; j++) {
             let wordB = wordsB[j];
-            console.log("Hey");
-            somme += difference(wordA, wordB);
+            somme += similarity(wordA, wordB) ** 2;
         }
     }
 
@@ -111,7 +119,7 @@ function sentenceDifference(sentenceA, sentenceB) {
 }
 
 function compareSearchItem(search, item) {
-    return sentenceDifference(search, item.author)
+    return sentenceSimiliraty(search, item.author) + sentenceSimiliraty(search, item.name);
 }
 
 function search(words, items) {
@@ -119,8 +127,8 @@ function search(words, items) {
     Renvoie la liste d'items triée pour correspondre au mieux aux mots recherchés */
     let ordonnedItems = Array.from(items);
     console.log(ordonnedItems);
-    ordonnedItems = ordonnedItems.filter(item => compareSearchItem(words, item) <= 0.5);
-    ordonnedItems.sort((itemA, itemB) => compareSearchItem(words, itemA) - compareSearchItem(words, itemB));
+    ordonnedItems = ordonnedItems.filter(item => compareSearchItem(words, item) >= 0);
+    ordonnedItems.sort((itemB, itemA) => compareSearchItem(words, itemA) - compareSearchItem(words, itemB));
     return ordonnedItems;
 }
 
@@ -180,9 +188,9 @@ function update() {
     if (searchBarInput.value != "") {
         searchedItems  = search(searchBarInput.value, items);
     }
-    const ordonnedItems = filter(maxPrice, minPrice, categories, searchedItems);
+    // const ordonnedItems = filter(maxPrice, minPrice, categories, searchedItems);
     
-    updateItems(ordonnedItems);
+    updateItems(searchedItems);
 }
 
 function changeURL() {
