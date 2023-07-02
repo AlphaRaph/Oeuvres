@@ -3,12 +3,14 @@
 
 <!-- En tête : (CSS ; JAVASCRIPT ; METADONNEES ; TITRE) -->
 <head>
-    <link rel="stylesheet" href="CSS/Propos.css">
-    <link rel="stylesheet" href="CSS/MENU-BURGER.css">
-    <link rel="stylesheet" href="CSS/HEADER.css">
-    <link rel="stylesheet" href="CSS/FOOTER.css">
+    <link rel="stylesheet" href="/static/CSS/Propos.css">
+    <link rel="stylesheet" href="/static/CSS/add.css">  
+    <link rel="stylesheet" href="/static/CSS/MENU-BURGER.css">
+    <link rel="stylesheet" href="/static/CSS/HEADER.css">
+    <link rel="stylesheet" href="/static/CSS/FOOTER.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script type="module" src="JAVASCRIPT/RECHERCHE.js"></script>
+    <script src="/static/JAVASCRIPT/RECHERCHE.js"></script>
+    <script src="/static/JAVASCRIPT/add.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oeuvres V8</title>
@@ -26,18 +28,18 @@
 
                 <!-- Logo -->
                 <div class="Logo">
-                    <a href="index.html" > <img src="PICTURES/HEADER/Logo BOURIGAULT Jade.png" alt="Logo"> </a>
+                    <a href="/" > <img src="/static/IMAGES/HEADER/Logo BOURIGAULT Jade.png" alt="Logo"> </a>
                 </div>
             </div>
             
             <!-- Deux : (SEARCH-BAR ; LOUPE) -->
             <div class="deux">
-                <!-- <form action="catalogue.html">  --> <!-- Avec le form il y avait un souci d'encondage de l'espace donc j'ai tout fait à partir de ton javascript-->
+                <!-- <form action="/catalogue">  --> <!-- Avec le form il y avait un souci d'encondage de l'espace donc j'ai tout fait à partir de ton javascript-->
                     <div class="search-bar">
                         <input id="search-bar" type="text" value="" placeholder="Rechercher un article" name="search">    
                         <input type="submit" value="Envoyer les données" id="submit0" style="display: none;">
                         <label for="submit0">
-                            <img src="PICTURES/HEADER/loupe.png" alt="Bouton de recherche" class="loupe-image"> 
+                            <img src="/static/IMAGES/HEADER/loupe.png" alt="Bouton de recherche" class="loupe-image"> 
                         </label>  
                     </div>
                 <!-- </form> --> 
@@ -48,7 +50,7 @@
 
                 <!-- Propos : (ICON ; TITRE) -->
                 <div class="panier">
-                    <a href="Propos.html">
+                    <a href="/propos">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                         <lord-icon
                             src="https://cdn.lordicon.com/amascaoj.json"
@@ -64,7 +66,7 @@
                 <div>
                 <!-- Add : (ICON ; TITRE) -->
                 <div class="connexion">
-                    <a href="Add.html">
+                    <a href="/add">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                         <lord-icon
                             src="https://cdn.lordicon.com/fpmskzsv.json"
@@ -81,7 +83,50 @@
 
     <main>
         <h1>Ajout de nouvelles oeuvres</h1>
-    <p>L'ajout de nouvelles oeuvres sur ce site est pour le moment bloqué par le manque de moyens alloués. Vous pouvez toutefois passer par mon mail pour qu'un ajout soit fait manuellement. A terme, l'objectif serait d'automatiser cette tâche afin que n'importe qui puisse intéragir avec la base de données contenant les oeuvres.</p>
+
+        <form method="post" action="/add" class="new-artwork-form" enctype=multipart/form-data>
+            <div class="image-box">
+                <div id="drag-and-drop-box">
+                    <input type="file" name="file" id="upload-button" accept="image/*"/>
+                    <label for="upload-button" id="upload-button-label">
+                        <i class="fa-solid fa-upload"></i>&nbsp; Chercher ou déposer une oeuvre
+                    </label>
+                    <div id="error"></div>
+                    <div id="image-display">
+                        <img src="" alt="" id="image-display-image">
+                        <figcaption id="image-display-figcaption"></figcaption>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="information-box">
+                <label for="name-input">Nom de l'oeuvre : </label>
+                <input type="text" id="name-input" name="name" placeholder="La Joconde" maxlength="55" autofocus required>
+                <label for="author-input">Nom de l'auteur : </label>
+                <input type="text" id="author-input" name="author" placeholder="Léonard de Vinci" maxlength="55" required>
+                <label for="materiau-et-support-input">Materiau et support :</label>
+                <input type="text" id="materiau-et-support-input" name="materiau et support" placeholder="Huile sur bois" size="50" maxlength="55">
+                <label for="dimensions-input">Dimensions</label>
+                <input type="text" id="dimensions-input" name="dimensions" placeholder="77 x 53 cm" maxlength="55">
+                <label for="date-input">Date</label>
+                <input type="text" id="date-input" name="date" placeholder="1503-1517" maxlength="55">
+                <label for="lieu-de-conservation-input">Lieu de conservation</label>
+                <input type="text" id="lieu-de-conservation-input" name="lieu de conservation" placeholder="Musée du Louvre" maxlength="55">
+
+                <label for="representation-filter">Représentation</label>
+                <input type="range" min="0" max="5" step="1" id="representation-filter" name="representation" class="range-information">
+                <label for="image-filter">Image</label>
+                <input type="range" min="0" max="5" step="1" id="image-filter" name="image" class="range-information">
+                <label for="materialite-filter">Matérialité</label>
+                <input type="range" min="0" max="5" step="1" id="materialite-filter" name="materialite" class="range-information">
+                <label for="processus-filter">Processus</label>
+                <input type="range" min="0" max="5" step="1" id="processus-filter" name="processus" class="range-information">
+                <label for="presentation-filter">Présentation</label>
+                <input type="range" min="0" max="5" step="1" id="presentation-filter" name="presentation" class="range-information">
+
+                <input type="submit" value="Valider">
+            </div>
+        </form>
     </main>
 
 </body>

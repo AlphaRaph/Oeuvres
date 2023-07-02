@@ -2,7 +2,7 @@
 header {
     overflow: visible;
     height : 10vh;
-    background-image: url("../PICTURES/HEADER/Bandeau\ Maya.jpeg") ;
+    background-image: url("/static/IMAGES/HEADER/Bandeau\ Maya.jpeg") ;
     background-position: center right;
     background-size: 100% ;
     font-family: 'Roboto', sans-serif;

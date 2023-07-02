@@ -1,8 +1,3 @@
-const reponse = await fetch("JSON/oeuvres.json");
-const items = await reponse.json();
-
-const FILTERS_SECTION = document.querySelector(".filters-section");
-const ITEMS_SECTION = document.querySelector(".items-section");
 
 function createItem (item) {
     // Création d'un bloque pour l'item
@@ -176,11 +171,9 @@ function update() {
     /* Fonction principale qui affiche tous les éléments en fonction des filtres et de la recherche */
 
     // On récupère tous les valeurs de tous les filtres
-    const maxPrice = maxPriceInput.input;
-    const minPrice = minPriceInput.input;
     const categories = new Map();
     for (let i = 0; i < categoriesInputs.length; i++) {
-        categories.set(categoriesNames[i], categoriesInputs[i].value);
+        categories.set(CATEGORIES_NAMES[i], categoriesInputs[i].value);
     }
     console.log(categories);
 
@@ -201,7 +194,7 @@ function changeURL() {
     const minPrice = minPriceInput.input;
     const categories = new Map();
     for (let i = 0; i < categoriesInputs.length; i++) {
-        categories.set(categoriesNames[i], categoriesInputs[i].value);
+        categories.set(CATEGORIES_NAMES[i], categoriesInputs[i].value);
     }
 
     const filtersForm = document.querySelector(".filters");
@@ -224,38 +217,49 @@ function initialize() {
         if (pName == "search") {
             searchBarInput.value = decodeURI(value);
         }
-        else if (categoriesNames.includes(pName)) {
-            let index = categoriesNames.indexOf(pName);
+        else if (CATEGORIES_NAMES.includes(pName)) {
+            let index = CATEGORIES_NAMES.indexOf(pName);
             categoriesInputs[index].value = value;
         }
     }
 }
 
 
+var items;
+var FILTERS_SECTION, ITEMS_SECTION;
+var searchBarInput;
+const CATEGORIES_NAMES = ["representation", "image", "materialite", "processus", "presentation"];
+var categoriesInputs;
 
-/// On s'occupe des FILTRES et de la Search bar
-// Search bar 
-const searchBarInput = document.querySelector("#search-bar");
-console.log("searchBarInput : ", searchBarInput);
-//searchBarInput.addEventListener("input", update);
+window.addEventListener("load", async () => {
+    const reponse = await fetch("/oeuvres");
+    items = await reponse.json();
 
-// Catégories
-const categoriesNames = ["representation", "image", "materialite", "processus", "presentation"];
-const categoriesInputs = [];
-// On récupère d'abord les catégories et on les relie à la fonction filter
-for (let i = 0; i < categoriesNames.length; i++) {
-    const categoryInput = document.querySelector("#" + categoriesNames[i] + "-filter")
-    categoryInput.addEventListener("change", changeURL)
-    categoriesInputs.push(categoryInput); // .append
-}
-// Autres filtres
-const maxPriceInput = document.querySelector("#max-price-filter");
-maxPriceInput.addEventListener("input", update);
-const minPriceInput = document.querySelector("#min-price-filter");
-minPriceInput.addEventListener("input", update);
+    FILTERS_SECTION = document.querySelector(".filters-section");
+    ITEMS_SECTION = document.querySelector(".items-section");
 
-initialize(); // Actualisation des filtres et de la seach bar en fonction de l'URL
-update(); // Acualisation des oeuvres en fonction des filtres et de la search bar
+
+    /// On s'occupe des FILTRES et de la Search bar
+    // Search bar 
+    searchBarInput = document.querySelector("#search-bar");
+    console.log("searchBarInput : ", searchBarInput);
+    //searchBarInput.addEventListener("input", update);
+
+    // Catégories
+    categoriesInputs = [];
+    // On récupère d'abord les catégories et on les relie à la fonction filter
+    for (let i = 0; i < CATEGORIES_NAMES.length; i++) {
+        const categoryInput = document.querySelector("#" + CATEGORIES_NAMES[i] + "-filter")
+        categoryInput.addEventListener("change", changeURL)
+        categoriesInputs.push(categoryInput); // .append
+    }
+
+    initialize(); // Actualisation des filtres et de la seach bar en fonction de l'URL
+    update(); // Acualisation des oeuvres en fonction des filtres et de la search bar
+
+    console.log("apparamment tout c'est bien passé");
+});
+
 
 
 

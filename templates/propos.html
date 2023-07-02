@@ -3,12 +3,12 @@
 
 <!-- En tête : (CSS ; JAVASCRIPT ; METADONNEES ; TITRE) -->
 <head>
-    <link rel="stylesheet" href="CSS/Propos.css">
-    <link rel="stylesheet" href="CSS/MENU-BURGER.css">
-    <link rel="stylesheet" href="CSS/HEADER.css">
-    <link rel="stylesheet" href="CSS/FOOTER.css">
+    <link rel="stylesheet" href="/static/CSS/Propos.css">
+    <link rel="stylesheet" href="/static/CSS/MENU-BURGER.css">
+    <link rel="stylesheet" href="/static/CSS/HEADER.css">
+    <link rel="stylesheet" href="/static/CSS/FOOTER.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script type="module" src="JAVASCRIPT/RECHERCHE.js"></script>
+    <script src="/static/JAVASCRIPT/RECHERCHE.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oeuvres V8</title>
@@ -16,7 +16,6 @@
 
 <!-- Corps de la page : (HEADER ; MAIN ; FOOTER)  -->
 <body>
-
     <!-- Header : (UN ; DEUX ; TROIS) -->
     <header>
         <nav class="orga">
@@ -26,18 +25,18 @@
 
                 <!-- Logo -->
                 <div class="Logo">
-                    <a href="index.html" > <img src="PICTURES/HEADER/Logo BOURIGAULT Jade.png" alt="Logo"> </a>
+                    <a href="/" > <img src="/static/IMAGES/HEADER/Logo BOURIGAULT Jade.png" alt="Logo"> </a>
                 </div>
             </div>
             
             <!-- Deux : (SEARCH-BAR ; LOUPE) -->
             <div class="deux">
-                <!-- <form action="catalogue.html">  --> <!-- Avec le form il y avait un souci d'encondage de l'espace donc j'ai tout fait à partir de ton javascript-->
+                <!-- <form action="/catalogue">  --> <!-- Avec le form il y avait un souci d'encondage de l'espace donc j'ai tout fait à partir de ton javascript-->
                     <div class="search-bar">
                         <input id="search-bar" type="text" value="" placeholder="Rechercher un article" name="search">    
                         <input type="submit" value="Envoyer les données" id="submit0" style="display: none;">
                         <label for="submit0">
-                            <img src="PICTURES/HEADER/loupe.png" alt="Bouton de recherche" class="loupe-image"> 
+                            <img src="/static/IMAGES/HEADER/loupe.png" alt="Bouton de recherche" class="loupe-image"> 
                         </label>  
                     </div>
                 <!-- </form> --> 
@@ -48,7 +47,7 @@
 
                 <!-- Propos : (ICON ; TITRE) -->
                 <div class="panier">
-                    <a href="Propos.html">
+                    <a href="/propos">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                         <lord-icon
                             src="https://cdn.lordicon.com/amascaoj.json"
@@ -64,7 +63,7 @@
                 <div>
                 <!-- Add : (ICON ; TITRE) -->
                 <div class="connexion">
-                    <a href="Add.html">
+                    <a href="/add">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
                         <lord-icon
                             src="https://cdn.lordicon.com/fpmskzsv.json"
