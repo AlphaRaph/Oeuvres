@@ -6,6 +6,11 @@
     margin-top: 50px;
 }
 
+.image-div img {
+    max-width: 1000px;
+    height: 700px;
+}
+
 .info-div{
     display: flex;
     flex-direction: column;

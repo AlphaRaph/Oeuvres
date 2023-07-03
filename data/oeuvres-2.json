@@ -444,6 +444,6 @@
     "presentation": "0",
     "processus": "5",
     "representation": "1",
-    "src": "static/OEUVRES/uploads/van_gogh_les_iris.jpg",
+    "src": "/static/OEUVRES/uploads/van_gogh_les_iris.jpg",
     "url": "les-iris"
 }

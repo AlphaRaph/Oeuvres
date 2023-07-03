@@ -151,16 +151,11 @@ function distance(categories, item) {
     return sum ** 0.5;
 }
 
-function filter(maxPrice, minPrice, categories, items) {
+function filter(categories, items) {
     /* (bool, int, int, dict, list) -> list
     Renvoie la liste d'items triée pour correspondre au mieux au filtres sélectionées */
     const ordonnedItems = Array.from(items);
 
-    /// On commence par les filtres qui suppriment des ouevres
-    // On sélectionne seulement les oeuvres dans la tranche de prix
-    ordonnedItems.filter(item => item.price >= minPrice && item.price <= maxPrice);
-
-    console.log(categories);
     /// Ensuite on s'attaque aux filtres qui ordonnent les oeuvres (les catégories)
     // Pour cela on calcule la distance en N dimensions entre les filtres sélectionnées et l'oeuvre pour ne pas les calculer plusieurs fois
     // (N est le nombre de catégories)
@@ -179,7 +174,7 @@ function filter(maxPrice, minPrice, categories, items) {
 }
 
 function searchAndFilterDistance(words, categories, item) {
-    return compareSearchItem(words, item);
+    return compareSearchItem(words, item) + distance(categories, item);
 }
 
 function SearchAndFilter(words, categories, items) {
@@ -198,21 +193,21 @@ function update() {
     }
     console.log(categories);
 
-    let searchedItems = items;
-    if (searchBarInput.value != "") {
-        searchedItems  = search(searchBarInput.value, items);
+    let ordonnedItems;
+    if (searchBarInput.value == "") {
+        ordonnedItems = filter(categories, items);
     }
-    // const ordonnedItems = filter(maxPrice, minPrice, categories, searchedItems);
+    else {
+        ordonnedItems = search(searchBarInput.value, items);
+    }
     
-    updateItems(searchedItems);
+    updateItems(ordonnedItems);
 }
 
 function changeURL() {
     /* Fonction qui change l'url pour pour actualiser les filtres */
     
     // On récupère tous les valeurs de tous les filtres
-    const maxPrice = maxPriceInput.input;
-    const minPrice = minPriceInput.input;
     const categories = new Map();
     for (let i = 0; i < categoriesInputs.length; i++) {
         categories.set(CATEGORIES_NAMES[i], categoriesInputs[i].value);
