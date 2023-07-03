@@ -1,8 +1,19 @@
 body {
-    margin: 0;
-    margin-bottom: 0.5vh;
+    margin : 0;
+    padding : 0;
     font-family: 'Roboto', sans-serif;
 }
+
+/* PAS TOUCHER */
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+/* PAS TOUCHER */
 
 /* ====================== LES FILTRES ======================= */
 .filters-section {
