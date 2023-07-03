@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-
-
+<!-- En tête : (CSS ; JAVASCRIPT ; METADONNEES ; TITRE) -->
 <head>
+    <link rel="stylesheet" href="/static/CSS/CSS.css">
+    <link rel="stylesheet" href="/static/CSS/MENU-BURGER.css">
     <link rel="stylesheet" href="/static/CSS/HEADER.css">
     <link rel="stylesheet" href="/static/CSS/FOOTER.css">
-    <link rel="stylesheet" href="/static/CSS/catalogue.css">
+    <link rel="stylesheet" href="/static/CSS/oeuvre.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oeuvres V8</title>
-    <script src="/static/JAVASCRIPT/catalogue.js"></script>
-    <script src="/static/JAVASCRIPT/RECHERCHE.js"></script>
+    <title>Buyhere V2</title>
+    <script src="/static/JAVASCRIPT/oeuvre.js"></script>
 </head>
 
-
-
+<!-- Corps de la page : (HEADER ; MAIN ; FOOTER)  -->
 <body>
+
     <!-- Header : (UN ; DEUX ; TROIS) -->
     <header>
         <nav class="orga">
 
-            <!-- Un : (MENU ; LOGO) -->
+            <!-- Un : (LOGO) -->
             <div class="un">
 
                 <!-- Logo -->
@@ -33,7 +33,7 @@
             
             <!-- Deux : (SEARCH-BAR ; LOUPE) -->
             <div class="deux">
-                <!-- <form action="catalogue.html">  --> <!-- Avec le form il y avait un souci d'encondage de l'espace donc j'ai tout fait à partir de ton javascript-->
+                <!-- <form action="/catalogue">  --> <!-- Avec le form il y avait un souci d'encondage de l'espace donc j'ai tout fait à partir de ton javascript-->
                     <div class="search-bar">
                         <input id="search-bar" type="text" value="" placeholder="Rechercher un article" name="search">    
                         <input type="submit" value="Envoyer les données" id="submit0" style="display: none;">
@@ -44,10 +44,10 @@
                 <!-- </form> --> 
             </div>
 
-            <!-- Trois : (PANIER ; CONNEXION) -->
+            <!-- Trois : (PROPOS ; ADD) -->
             <div class="trois">
 
-                <!-- Panier : (ICON ; TITRE) -->
+                <!-- Propos : (ICON ; TITRE) -->
                 <div class="panier">
                     <a href="/propos">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
@@ -63,7 +63,7 @@
                 </div>
 
                 <div>
-                <!-- Connexion : (ICON ; TITRE) -->
+                <!-- Add : (ICON ; TITRE) -->
                 <div class="connexion">
                     <a href="/add">
                         <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
@@ -80,40 +80,19 @@
         </nav>
     </header>
 
+    
     <main>
-        <section class="filters-section">
-            <h3 class="filters-title">Filtres</h3>
-            <form action="" method="get" class="filters">
-                <div class="filters-column">
-                    <div class="filter-raw">
-                        <label for="representation-filter">Représentation</label>
-                        <input type="range" min="0" max="5" step="1" id="representation-filter" name="representation">
-                    </div>
-                    <div class="filter-raw">
-                        <label for="image-filter">Image</label>
-				        <input type="range" min="0" max="5" step="1" id="image-filter" name="image">
-                    </div>
-                </div>
-                <div class="filters-column">
-                    <div class="filter-raw">
-                        <label for="materialite-filter">Matérialité</label>
-                        <input type="range" min="0" max="5" step="1" id="materialite-filter" name="materialite">
-                    </div>
-                    <div class="filter-raw">
-                        <label for="processus-filter">Processus</label>
-				        <input type="range" min="0" max="5" step="1" id="processus-filter" name="processus">
-                    </div>
-                </div>
-                <div class="filters-column">
-                    <div class="filter-raw">
-                        <label for="presentation-filter">Présentation</label>
-                        <input type="range" min="0" max="5" step="1" id="presentation-filter" name="presentation">
-                    </div>
-                </div>
-            </form>
+        <section class="container">
+
+            
         </section>
-        <section class="items-section">
-        </section>
+
     </main>
+
+    <!-- Footer : () -->
+    <footer>
+        <p>Presque un Footer</p>
+    </footer>
 </body>
+
 </html>

@@ -64,6 +64,13 @@ class ItemManager:
         else:
             return url_name
 
+    def get_item(self, url_name):
+        return self.itemsByUrl[url_name]
+
+    @staticmethod
+    def item_to_json(item):
+        return json.dumps(item, sort_keys=True, indent=4)
+
     def save_item(self, name, author, attributes, file, upload_manager):
         try:
             # Tout d'abord on crée deux noms : un nom de fichier pour le stocker sur le serveur et un nom d'url

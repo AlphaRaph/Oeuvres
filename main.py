@@ -30,7 +30,7 @@ def catalogue():
 
 
 @app.route("/oeuvres")
-def get_oeuvre():
+def get_oeuvres():
     return itemManager.read_json()
 
 
@@ -68,6 +68,16 @@ def add():
           <input type=submit value=Upload>
         </form>
         '''
+
+
+@app.route("/oeuvres/<urlname>")
+def oeuvre(urlname):
+    return render_template("oeuvre.html")
+
+
+@app.route("/oeuvres/<urlname>/json")
+def get_oeuvre(urlname):
+    return itemManager.item_to_json(itemManager.get_item(urlname))
 
 
 if __name__ == "__main__":

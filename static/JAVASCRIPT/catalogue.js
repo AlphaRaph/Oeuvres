@@ -7,7 +7,7 @@ function createItem (item) {
     // Ajout d'une image en fond
     itemElement.style.backgroundImage = "url(" + item.src + ")";
     
-    // Creation du nom et du prix qui s'afficheront par dessus l'image grâce à la position absolue
+    // Creation du nom et de l'auteur qui s'afficheront par dessus l'image grâce à la position absolue
     const itemContentDiv = document.createElement("div");
     itemContentDiv.classList = ["item-content"];
 
@@ -20,6 +20,17 @@ function createItem (item) {
     itemContentDiv.appendChild(authorElement);
 
     itemElement.appendChild(itemContentDiv);
+
+    // Création du form qui permettra d'accéder à l'oeuvre quand on clique dessus
+    // const formElement = document.createElement("form");
+    // formElement.action = "/oeuvres/" + item.url;
+    // const hiddenButton = document.createElement("input");
+    // hiddenButton.type = "Submit";
+    // hiddenButton.value = "Voir l'oeuvre";
+    const linkElement = document.createElement("a");
+    linkElement.href = "/oeuvres/" + item.url;
+    linkElement.innerText = "Voir l'oeuvre";
+    itemElement.appendChild(linkElement);
 
     // Ajout de l'item au html
     ITEMS_SECTION.appendChild(itemElement);
@@ -164,6 +175,16 @@ function filter(maxPrice, minPrice, categories, items) {
     });
     
     // On renvoie la liste de nos items ordonnés
+    return ordonnedItems;
+}
+
+function searchAndFilterDistance(words, categories, item) {
+    return compareSearchItem(words, item);
+}
+
+function SearchAndFilter(words, categories, items) {
+    let ordonnedItems = Array.from(items);
+    ordonnedItems.sort((itemB, itemA) => compareSearchItem(words, itemA) - compareSearchItem(words, itemB));
     return ordonnedItems;
 }
 

@@ -8,7 +8,7 @@
     "lieu de conservation": "Saint-Germain en Laye, musee d'Archeologie nationale",
     "materialite": "3",
     "materiau et support": "pierre calcaire",
-    "name": ", Statuette feminie dite la Venus de Tursac",
+    "name": "Statuette feminie dite la Venus de Tursac",
     "presentation": "4",
     "processus": "1",
     "representation": "3",
@@ -412,7 +412,7 @@
     "presentation": "3",
     "processus": "3",
     "representation": "3",
-    "src": "static/OEUVRES/uploads/leonard_de_vinci_la_joconde_5.jpg",
+    "src": "/static/OEUVRES/uploads/leonard_de_vinci_la_joconde_5.jpg",
     "url": "la-joconde"
 },
 {
@@ -428,6 +428,22 @@
     "presentation": "3",
     "processus": "3",
     "representation": "3",
-    "src": "static/OEUVRES/uploads/johannes_vermeer_la_jeune_fille_a_la_perle.jpg",
+    "src": "/static/OEUVRES/uploads/johannes_vermeer_la_jeune_fille_a_la_perle.jpg",
     "url": "la-jeune-fille-a-la-perle"
+},
+{
+    "author": "Van Gogh",
+    "date": "",
+    "dimensions": "",
+    "id": 28,
+    "image": "4",
+    "lieu de conservation": "",
+    "materialite": "2",
+    "materiau et support": "Huile sur toile",
+    "name": "Les Iris",
+    "presentation": "0",
+    "processus": "5",
+    "representation": "1",
+    "src": "static/OEUVRES/uploads/van_gogh_les_iris.jpg",
+    "url": "les-iris"
 }
