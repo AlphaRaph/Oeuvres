@@ -86,7 +86,7 @@ class ItemManager:
                 "name": name,
                 "author": author,
                 "url": url_name,
-                "src": upload_path
+                "src": "/" + upload_path
             }
             for attribute_name in attributes:
                 if attribute_name not in self.ITEM_ATTRIBUTES:
@@ -99,6 +99,11 @@ class ItemManager:
             with open(self.item_file_path, "a") as baseFile:
                 baseFile.write(",\n")
                 baseFile.write(json_item)
+
+            self.items.append(item)
+            self.itemsById[item["id"]] = item
+            self.lastId += 1
+            self.itemsByUrl[item["url"]] = item
 
             return True  # Pas d'erreur
 

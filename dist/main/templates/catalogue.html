@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+
+<head>
+    <link rel="stylesheet" href="/static/CSS/HEADER.css">
+    <link rel="stylesheet" href="/static/CSS/FOOTER.css">
+    <link rel="stylesheet" href="/static/CSS/catalogue.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oeuvres V10</title>
+    <script src="/static/JAVASCRIPT/catalogue.js"></script>
+    <script src="/static/JAVASCRIPT/RECHERCHE.js"></script>
+</head>
+
+
+
+<body>
+    <!-- Header : (UN ; DEUX ; TROIS) -->
+    <header>
+        <nav class="orga">
+
+            <!-- Un : (MENU ; LOGO) -->
+            <div class="un">
+
+                <!-- Logo -->
+                <div class="Logo">
+                    <a href="/" > <img src="/static/IMAGES/HEADER/Logo BOURIGAULT Jade.png" alt="Logo"> </a>
+                </div>
+            </div>
+            
+            <!-- Deux : (SEARCH-BAR ; LOUPE) -->
+            <div class="deux">
+                <!-- <form action="catalogue.html">  --> <!-- Avec le form il y avait un souci d'encondage de l'espace donc j'ai tout fait à partir de ton javascript-->
+                    <div class="search-bar">
+                        <input id="search-bar" type="text" value="" placeholder="Rechercher un article" name="search">    
+                        <input type="submit" value="Envoyer les données" id="submit0" style="display: none;">
+                        <label for="submit0">
+                            <img src="/static/IMAGES/HEADER/loupe.png" alt="Bouton de recherche" class="loupe-image"> 
+                        </label>  
+                    </div>
+                <!-- </form> --> 
+            </div>
+
+            <!-- Trois : (PANIER ; CONNEXION) -->
+            <div class="trois">
+
+                <!-- Panier : (ICON ; TITRE) -->
+                <div class="panier">
+                    <a href="/propos">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/amascaoj.json"
+                            trigger="hover"
+                            colors="primary:#ffffff"
+                            state="hover-2"
+                            style="width:5vh;height:5vh">
+                        </lord-icon>
+                        <p> A propos </p>
+                    </a>
+                </div>
+
+                <div>
+                <!-- Connexion : (ICON ; TITRE) -->
+                <div class="connexion">
+                    <a href="/add">
+                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/fpmskzsv.json"
+                            trigger="hover"
+                            colors="primary:#ffffff"
+                            style="width:5vh;height:5vh">
+                        </lord-icon>
+                        <p> Ajouter </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="filters-section">
+            <h3 class="filters-title">Filtres</h3>
+            <form action="" method="get" class="filters">
+                <div class="filters-column">
+                    <div class="filter-raw">
+                        <label for="representation-filter">Représentation</label>
+                        <input type="range" min="0" max="5" step="1" id="representation-filter" name="representation">
+                    </div>
+                    <div class="filter-raw">
+                        <label for="image-filter">Image</label>
+				        <input type="range" min="0" max="5" step="1" id="image-filter" name="image">
+                    </div>
+                </div>
+                <div class="filters-column">
+                    <div class="filter-raw">
+                        <label for="materialite-filter">Matérialité</label>
+                        <input type="range" min="0" max="5" step="1" id="materialite-filter" name="materialite">
+                    </div>
+                    <div class="filter-raw">
+                        <label for="processus-filter">Processus</label>
+				        <input type="range" min="0" max="5" step="1" id="processus-filter" name="processus">
+                    </div>
+                </div>
+                <div class="filters-column">
+                    <div class="filter-raw">
+                        <label for="presentation-filter">Présentation</label>
+                        <input type="range" min="0" max="5" step="1" id="presentation-filter" name="presentation">
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section class="items-section">
+        </section>
+    </main>
+	
+<!-- Footer : () -->
+    <footer>
+        <div class="footer1">
+        </div>
+        <div class="footer2">
+        </div>
+    </footer>
+</body>
+</html>

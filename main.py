@@ -8,7 +8,7 @@ from UploadManager import *
 # ======== Chargement de la base de données JSON des oeuvres =================
 ITEM_FOLDER_PATH = "data"
 ITEM_FILE_PATH = "data/oeuvres-2.json"
-UPLOAD_FOLDER = "/static/OEUVRES/uploads"
+UPLOAD_FOLDER = "static/OEUVRES/uploads"
 
 itemManager = ItemManager(ITEM_FILE_PATH, ITEM_FOLDER_PATH)
 uploadManager = UploadManager(UPLOAD_FOLDER)
