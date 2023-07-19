@@ -12,7 +12,7 @@
         "presentation": "4",
         "processus": "1",
         "representation": "3",
-        "src": "/static/OEUVRES/Image/Anonymes_europeens.jpg",
+        "src": "PICTURES/OEUVRES/Anonymes_europeens.jpg",
         "url": "statuette-feminie-dite-la-venus-de-tursac"
     },
     {
@@ -28,7 +28,7 @@
         "presentation": "3",
         "processus": "1",
         "representation": "2",
-        "src": "/static/OEUVRES/Image/Anonymes.png",
+        "src": "PICTURES/OEUVRES/Anonymes.png",
         "url": "psautier-dhenry-de-blois-winchester-feuillet-39"
     },
     {
@@ -44,7 +44,7 @@
         "presentation": "5",
         "processus": "2",
         "representation": "4",
-        "src": "/static/OEUVRES/Presentation/Duccio_di_Buoninsegna.jpg",
+        "src": "PICTURES/OEUVRES/Duccio_di_Buoninsegna.jpg",
         "url": "maesta"
     },
     {
@@ -60,7 +60,7 @@
         "presentation": "1",
         "processus": "2",
         "representation": "4",
-        "src": "/static/OEUVRES/Image/Francesca_Piero_della.jpg",
+        "src": "PICTURES/OEUVRES/Francesca_Piero_della.jpg",
         "url": "la-flagellation-du-christ"
     },
     {
@@ -76,7 +76,7 @@
         "presentation": "1",
         "processus": "2",
         "representation": "5",
-        "src": "/static/OEUVRES/Representation/DURER_Albrecht.jpg",
+        "src": "PICTURES/OEUVRES/DURER_Albrecht.jpg",
         "url": "la-grande-touffe-dherbe"
     },
     {
@@ -92,7 +92,7 @@
         "presentation": "3",
         "processus": "3",
         "representation": "5",
-        "src": "/static/OEUVRES/Representation/Shitao_Daoji.jpg",
+        "src": "PICTURES/OEUVRES/Shitao_Daoji.jpg",
         "url": "retour-a-la-maison-album-de-12-peintures-feuille-c"
     },
     {
@@ -108,7 +108,7 @@
         "presentation": "5",
         "processus": "4",
         "representation": "1",
-        "src": "/static/OEUVRES/Presentation/Duchamp_Marcel.jpg",
+        "src": "PICTURES/OEUVRES/Duchamp_Marcel.jpg",
         "url": "fontaine-urinoir"
     },
     {
@@ -124,7 +124,7 @@
         "presentation": "1",
         "processus": "3",
         "representation": "1",
-        "src": "/static/OEUVRES/Image/KANDINSKY_Wassily.jpg",
+        "src": "PICTURES/OEUVRES/KANDINSKY_Wassily.jpg",
         "url": "gelb-rot-blau"
     },
     {
@@ -140,7 +140,7 @@
         "presentation": "1",
         "processus": "3",
         "representation": "5",
-        "src": "/static/OEUVRES/Representation/BONNARD_Pierre.jpg",
+        "src": "PICTURES/OEUVRES/BONNARD_Pierre.jpg",
         "url": "paysage-au-remorqueur"
     },
     {
@@ -156,7 +156,7 @@
         "presentation": "1",
         "processus": "3",
         "representation": "5",
-        "src": "/static/OEUVRES/Representation/RICHIER_Germaine.jpg",
+        "src": "PICTURES/OEUVRES/RICHIER_Germaine.jpg",
         "url": "lorage"
     },
     {
@@ -172,7 +172,7 @@
         "presentation": "1",
         "processus": "3",
         "representation": "5",
-        "src": "/static/OEUVRES/Representation/GIACOMETTI_Alberto.jpg",
+        "src": "PICTURES/OEUVRES/GIACOMETTI_Alberto.jpg",
         "url": "buste-de-sockel-amenophis"
     },
     {
@@ -188,7 +188,7 @@
         "presentation": "1",
         "processus": "2",
         "representation": "2",
-        "src": "/static/OEUVRES/Materialite/DUBUFFET_Jean.jpg",
+        "src": "PICTURES/OEUVRES/DUBUFFET_Jean.jpg",
         "url": "la-bouture"
     },
     {
@@ -204,7 +204,7 @@
         "presentation": "5",
         "processus": "5",
         "representation": "1",
-        "src": "/static/OEUVRES/Processus/KAPROW_Allan.jpg",
+        "src": "PICTURES/OEUVRES/KAPROW_Allan.jpg",
         "url": "rearrangeable-panels"
     },
     {
@@ -220,7 +220,7 @@
         "presentation": "5",
         "processus": "4",
         "representation": "1",
-        "src": "/static/OEUVRES/Presentation/NAUMAN_Bruce.jpg",
+        "src": "PICTURES/OEUVRES/NAUMAN_Bruce.jpg",
         "url": "going-around-the-corner-piece"
     },
     {
@@ -236,7 +236,7 @@
         "presentation": "4",
         "processus": "2",
         "representation": "1",
-        "src": "/static/OEUVRES/Materialite/FLAVIN_Dan.jpg",
+        "src": "PICTURES/OEUVRES/FLAVIN_Dan.jpg",
         "url": "untitled-to-donna-5a"
     },
     {
@@ -252,7 +252,7 @@
         "presentation": "4",
         "processus": "5",
         "representation": "1",
-        "src": "/static/OEUVRES/Processus/KAWARA_ON.jpg",
+        "src": "PICTURES/OEUVRES/KAWARA_ON.jpg",
         "url": "today-series-1966"
     },
     {
@@ -268,7 +268,7 @@
         "presentation": "5",
         "processus": "4",
         "representation": "1",
-        "src": "/static/OEUVRES/Presentation/ABRAMOVIC_Marina_et_ULAY.png",
+        "src": "PICTURES/OEUVRES/ABRAMOVIC_Marina_et_ULAY.png",
         "url": "imponderabilia"
     },
     {
@@ -284,7 +284,7 @@
         "presentation": "5",
         "processus": "5",
         "representation": "3",
-        "src": "/static/OEUVRES/Processus/LEWITT_Sol.jpg",
+        "src": "PICTURES/OEUVRES/LEWITT_Sol.jpg",
         "url": "wall-drawing-422"
     },
     {
@@ -300,7 +300,7 @@
         "presentation": "2",
         "processus": "3",
         "representation": "3",
-        "src": "/static/OEUVRES/Image/LICHTENSTEIN_Roy.png",
+        "src": "PICTURES/OEUVRES/LICHTENSTEIN_Roy.png",
         "url": "two-paintings-green-lamp-de-la-serie-paintings"
     },
     {
@@ -316,7 +316,7 @@
         "presentation": "4",
         "processus": "3",
         "representation": "2",
-        "src": "/static/OEUVRES/Materialite/SOULAGES_Pierre.jpg",
+        "src": "PICTURES/OEUVRES/SOULAGES_Pierre.jpg",
         "url": "polyptyque-g"
     },
     {
@@ -332,7 +332,7 @@
         "presentation": "5",
         "processus": "5",
         "representation": "1",
-        "src": "/static/OEUVRES/Processus/GONZALEZ-TORRES_Felix.jpeg",
+        "src": "PICTURES/OEUVRES/GONZALEZ-TORRES_Felix.jpeg",
         "url": "untitled-placebo---landscape---for-roni"
     },
     {
@@ -348,7 +348,7 @@
         "presentation": "4",
         "processus": "3",
         "representation": "1",
-        "src": "/static/OEUVRES/Materialite/BERRADA_Icham.jpg",
+        "src": "PICTURES/OEUVRES/BERRADA_Icham.jpg",
         "url": "presage"
     },
     {
@@ -364,7 +364,7 @@
         "presentation": "4",
         "processus": "2",
         "representation": "1",
-        "src": "/static/OEUVRES/Materialite/Vasconcelos_Johana.jpg",
+        "src": "PICTURES/OEUVRES/Vasconcelos_Johana.jpg",
         "url": "marilyne"
     },
     {
@@ -380,7 +380,7 @@
         "presentation": "5",
         "processus": "3",
         "representation": "1",
-        "src": "/static/OEUVRES/Presentation/LAIB_Wolfgang.jpg",
+        "src": "PICTURES/OEUVRES/LAIB_Wolfgang.jpg",
         "url": "pollen-from-hazelnut"
     },
     {
@@ -396,24 +396,8 @@
         "presentation": "4",
         "processus": "5",
         "representation": "2",
-        "src": "/static/OEUVRES/Processus/PENONE_Giuseppe.png",
+        "src": "PICTURES/OEUVRES/PENONE_Giuseppe.png",
         "url": "alpi-maritime-continuera-a-crescere-tranne-che-in-quel-punto"
-    },
-    {
-        "author": "l\u00e9onard de vinci",
-        "date": "1503-1507",
-        "dimensions": "77 x 33 cm",
-        "id": 26,
-        "image": "3",
-        "lieu de conservation": "Mus\u00e9e du Louvre",
-        "materialite": "3",
-        "materiau et support": "huile sur bois",
-        "name": "la joconde",
-        "presentation": "3",
-        "processus": "3",
-        "representation": "3",
-        "src": "/static/OEUVRES/uploads/leonard_de_vinci_la_joconde_5.jpg",
-        "url": "la-joconde"
     },
     {
         "author": "Johannes Vermeer",
@@ -428,7 +412,7 @@
         "presentation": "3",
         "processus": "3",
         "representation": "3",
-        "src": "/static/OEUVRES/uploads/johannes_vermeer_la_jeune_fille_a_la_perle.jpg",
+        "src": "PICTURES/OEUVRES/johannes_vermeer_la_jeune_fille_a_la_perle.jpg",
         "url": "la-jeune-fille-a-la-perle"
     }
 ]
