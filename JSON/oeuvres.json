@@ -400,19 +400,35 @@
         "url": "alpi-maritime-continuera-a-crescere-tranne-che-in-quel-punto"
     },
     {
-        "author": "Johannes Vermeer",
-        "date": "",
-        "dimensions": "",
-        "id": 28,
-        "image": "4",
-        "lieu de conservation": "",
-        "materialite": "1",
+        "author": "Vincent van Gogh",
+        "date": "jsp 2",
+        "dimensions": "jsp 1",
+        "id": 26,
+        "image": "5",
+        "lieu de conservation": "jsp 3",
+        "materialite": "2",
         "materiau et support": "Huile sur toile",
-        "name": "La Jeune Fille \u00e0 la perle (je ne vois pas la perle)",
-        "presentation": "0",
-        "processus": "2",
-        "representation": "5",
-        "src": "PICTURES/OEUVRES/johannes_vermeer_la_jeune_fille_a_la_perle.jpg",
-        "url": "la-jeune-fille-a-la-perle"
+        "name": "Les Tournesols",
+        "presentation": "3",
+        "processus": "4",
+        "representation": "1",
+        "src": "PICTURES/OEUVRES/vincent_van_gogh_les_tournesols_4.jpg",
+        "url": "les-tournesols"
+    },
+    {
+        "author": "Vincent van Gogh",
+        "date": "jsp 2",
+        "dimensions": "jsp 1",
+        "id": 27,
+        "image": "4",
+        "lieu de conservation": "jsp 3",
+        "materialite": "2",
+        "materiau et support": "Huile sur toile",
+        "name": "La nuit \u00e9toil\u00e9e",
+        "presentation": "3",
+        "processus": "4",
+        "representation": "2",
+        "src": "PICTURES/OEUVRES/vincent_van_gogh_la_nuit_etoilee.jpg",
+        "url": "la-nuit-etoilee"
     }
 ]
