@@ -9,77 +9,30 @@
     <link rel="stylesheet" href="/static/CSS/HEADER.css">
     <link rel="stylesheet" href="/static/CSS/FOOTER.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="/static/JAVASCRIPT/RECHERCHE.js"></script>
     <script src="/static/JAVASCRIPT/add.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oeuvres V10</title>
+
+    <!-- Permet d'ajouter le header et le footer -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        $(function(){
+            $("header").load("/header"); 
+            $("footer").load("/footer");
+        });
+    </script>
 </head>
 
 <!-- Corps de la page : (HEADER ; MAIN ; FOOTER)  -->
 <body>
 
     <!-- Header : (UN ; DEUX ; TROIS) -->
-    <header>
-        <nav class="orga">
-
-            <!-- Un : (LOGO) -->
-            <div class="un">
-
-                <!-- Logo -->
-                <div class="Logo">
-                    <a href="/" > <img src="/static/IMAGES/HEADER/Logo BOURIGAULT Jade.png" alt="Logo"> </a>
-                </div>
-            </div>
-            
-            <!-- Deux : (SEARCH-BAR ; LOUPE) -->
-            <div class="deux">
-                <!-- <form action="/catalogue">  --> <!-- Avec le form il y avait un souci d'encondage de l'espace donc j'ai tout fait à partir de ton javascript-->
-                    <div class="search-bar">
-                        <input id="search-bar" type="text" value="" placeholder="Rechercher un article" name="search">    
-                        <input type="submit" value="Envoyer les données" id="submit0" style="display: none;">
-                        <label for="submit0">
-                            <img src="/static/IMAGES/HEADER/loupe.png" alt="Bouton de recherche" class="loupe-image"> 
-                        </label>  
-                    </div>
-                <!-- </form> --> 
-            </div>
-
-            <!-- Trois : (PROPOS ; ADD) -->
-            <div class="trois">
-
-                <!-- Propos : (ICON ; TITRE) -->
-                <div class="panier">
-                    <a href="/propos">
-                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                        <lord-icon
-                            src="https://cdn.lordicon.com/amascaoj.json"
-                            trigger="hover"
-                            colors="primary:#ffffff"
-                            state="hover-2"
-                            style="width:5vh;height:5vh">
-                        </lord-icon>
-                        <p> A propos </p>
-                    </a>
-                </div>
-
-                <div>
-                <!-- Add : (ICON ; TITRE) -->
-                <div class="connexion">
-                    <a href="/add">
-                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                        <lord-icon
-                            src="https://cdn.lordicon.com/fpmskzsv.json"
-                            trigger="hover"
-                            colors="primary:#ffffff"
-                            style="width:5vh;height:5vh">
-                        </lord-icon>
-                        <p> Ajouter </p>
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <header></header>
 
     <main>
         <h1>Ajout de nouvelles oeuvres</h1>
@@ -129,13 +82,8 @@
         </form>
     </main>
     
-<!-- Footer : () -->
-    <footer>
-        <div class="footer1">
-        </div>
-        <div class="footer2">
-        </div>
-    </footer>
+    <!-- Footer : () -->
+    <footer></footer>
 </body>
 
 </html>

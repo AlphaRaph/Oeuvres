@@ -14,6 +14,7 @@ ITEM_FILE_PATH = "data/oeuvres.json"
 UPLOAD_FOLDER = "static/OEUVRES"
 HISTORY_FILE_PATH = "logs/history.txt"
 
+ACCESS_TOKEN_FILE_PATH = "access_token.txt"
 SERVER_DATABASE_PATH = "JSON/oeuvres.json"
 SERVER_OEUVRES_PATH = "PICTURES/OEUVRES"
 SERVER_BRANCH = "main"
@@ -21,7 +22,7 @@ SERVER_BRANCH = "main"
 
 itemManager = ItemManager(ITEM_FILE_PATH, ITEM_FOLDER_PATH)
 uploadManager = UploadManager(UPLOAD_FOLDER)
-serverManager = ServerManager(SERVER_DATABASE_PATH, SERVER_OEUVRES_PATH, SERVER_BRANCH)
+serverManager = ServerManager(ACCESS_TOKEN_FILE_PATH, SERVER_DATABASE_PATH, SERVER_OEUVRES_PATH, SERVER_BRANCH)
 historyManager = HistoryManager(HISTORY_FILE_PATH)
 
 

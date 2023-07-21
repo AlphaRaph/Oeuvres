@@ -2,14 +2,18 @@ import github
 
 
 class ServerManager:
-    ACCES_TOKEN = "A renseigner"
-
-    def __init__(self, database_path, images_path, branch, debug=False):
+    def __init__(self, token_file_path, database_path, images_path, branch, debug=False):
+        self.token_file_path = token_file_path
+        self.access_token = self.get_access_token()
         self.database_path = database_path
         self.images_path = images_path
         self.branch = branch
         self.debug = debug
         self.connected = False
+
+    def get_access_token(self):
+        with open(self.token_file_path, 'r') as file:
+            return file.read()
 
     def connect(self):
         if self.connected:
@@ -21,7 +25,7 @@ class ServerManager:
 
             print("Connection avec le serveur GitHub...")
             # using an access token
-            self.auth = github.Auth.Token(self.ACCES_TOKEN)
+            self.auth = github.Auth.Token(self.access_token)
 
             # Public Web Github
             self.g = github.Github(auth=self.auth)
@@ -70,6 +74,7 @@ class ServerManager:
                 print(message[:-1] + " réalisé avec succès.")
 
             history_manager.commit()
+            print("Mise à jour des images des oeuvres réalisée avec succès.")
 
         except Exception as e:
             raise DataBaseError("Erreur lors de la mise à jour de la base de données JSON : \n" + str(e)) from e
@@ -85,7 +90,6 @@ class ServerManager:
 
             # Modification du fichier oeuvres.json
             message = "Mise à jour de la base de données par le logiciel administrateur."
-            print(message + "..")
             self.repo.update_file(oeuvres_contents.path, message,
                                   new_content, oeuvres_contents.sha, branch=self.branch)
             print(message[:-1] + " réalisée avec succès.")

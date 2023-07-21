@@ -26,3 +26,5 @@ il permet au logiciel d'envoyer uniquement les nouvelles modifications au serveu
 21/07/2023-11:36:22 COMMIT
 21/07/2023-11:53:14 ADD les-tournesols vincent_van_gogh_les_tournesols_4.jpg
 21/07/2023-11:53:56 REMOVE les-tournesols vincent_van_gogh_les_tournesols_4.jpg
+21/07/2023-14:26:21 EDIT la-bouture  
+21/07/2023-14:26:26 COMMIT
