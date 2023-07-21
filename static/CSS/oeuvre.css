@@ -2,11 +2,26 @@ main {
     background-color: white;
 }
 .container {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-    margin-top: 50px;
+    margin-top: 50px; */
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.5fr; 
+    grid-template-rows: 1fr 0.1fr;
+    gap: 20px;
+    max-width: 1500px;
+    margin: 20px auto;
+}
+.image-div {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin: auto;
+}
+.modification-div {
+    grid-row-start: 2;
+    grid-row-end: 4;
 }
 
 .image-div img {
@@ -34,6 +49,7 @@ main {
 .categories-div {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: lightgray;
     border-radius: 40px;
     padding: 10px;
@@ -41,4 +57,15 @@ main {
 
 .infos h3{
     text-align: center;
+}
+
+.edit-button, .delete-button {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    background-color: #58D68D;
+    padding: 20px;
+    border-radius: 50px;
+    line-height: 100px;
 }

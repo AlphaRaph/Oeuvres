@@ -12,6 +12,10 @@ class UploadManager:
         return filename.rsplit('.', 1)[1].lower()
 
     @staticmethod
+    def get_file_name(file_path):
+        return file_path.rsplit("/", )[-1]
+
+    @staticmethod
     def get_path(folder_path, file_name):
         return os.path.join(folder_path, file_name).replace("\\", "/")
 
@@ -30,7 +34,7 @@ class UploadManager:
         file_name = file_name + "." + extension
         file_name = werkzeug.utils.secure_filename(file_name)   # On revérifie que le nom de fichier est correcte
 
-        if os.path.exists(self.get_upload_path(file_name)): # Si le fichier existe alors on crée un nouveau nom de fichier
+        if os.path.exists(self.get_upload_path(file_name)):  # Si le fichier existe alors on crée un nouveau nom de fichier
             return self.create_file_name(author, name, extension, incrementation + 1)
         else:
             return file_name
@@ -45,3 +49,17 @@ class UploadManager:
         file.save(upload_path)
 
         return upload_path
+
+    def update_upload(self, last_file_name, name, author, new_file):
+        self.delete_upload(last_file_name)
+        return self.upload_artwork(name, author, new_file)
+
+    def delete_upload(self, file_name):
+        os.remove(self.get_upload_path(file_name))
+
+    def get_upload_as_bytes(self, file_name):
+        with open(self.get_upload_path(file_name), 'rb') as upload:
+            upload_string = upload.read()
+            upload_data = bytearray(upload_string)
+            upload_bytes = bytes(upload_data)
+            return upload_bytes

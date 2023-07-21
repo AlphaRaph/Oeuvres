@@ -86,24 +86,16 @@ function similarity(wordA, wordB) {
         if (cptSimi > maxSimi) {
             maxSimi = cptSimi;
         }
-        // console.log(`simi ${shortWord} vs ${longWord} start ${start} : ${cptSimi}`);
     }
 
-    console.log(`simi ${longWord} vs ${shortWord} : `, maxSimi);
     var ratio = maxSimi / longSize;
-    console.log("ratio : " + ratio);
     var similarity = ratio ** 2;
-    console.log("similarity : " + similarity);
 
     return similarity;
 }
 function sentenceSimiliraty(sentenceA, sentenceB) {
-    console.log("sentence A : ", sentenceA);
-    console.log("sentence B : ", sentenceB);
     let wordsA = sentenceA.split(" ");
     let wordsB = sentenceB.split(" ");
-    console.log("words A : ", wordsA);
-    console.log("words B : ", wordsB);
 
     let somme = 0 // Somme des différences entre les mots
     for (let i = 0; i < wordsA.length; i++) {
@@ -115,11 +107,9 @@ function sentenceSimiliraty(sentenceA, sentenceB) {
     }
 
     if (wordsA.length > wordsB.length) {
-        console.log("Moyenne : " + somme/wordsA.length);
         return somme / wordsA.length;
     }
     else {
-        console.log("Moyenne : " + somme/wordsB.length);
         return somme / wordsB.length;
     }
 }
@@ -132,7 +122,6 @@ function search(words, items) {
     /* (str, list) -> list
     Renvoie la liste d'items triée pour correspondre au mieux aux mots recherchés */
     let ordonnedItems = Array.from(items);
-    console.log(ordonnedItems);
     ordonnedItems = ordonnedItems.filter(item => compareSearchItem(words, item) >= 0);
     ordonnedItems.sort((itemB, itemA) => compareSearchItem(words, itemA) - compareSearchItem(words, itemB));
     return ordonnedItems;
@@ -164,8 +153,6 @@ function filter(categories, items) {
     
     //ordonnedItems.sort((a, b) => distance(categories, a) - distance(categories, b)) // a est avant b si a est plus proche que b des catégories 
     ordonnedItems.sort(function (a, b) {
-        console.log("distance a", distance(categories, a));
-        console.log("distance b", distance(categories, b));
         return distance(categories, a) - distance(categories, b);
     });
     
@@ -191,14 +178,13 @@ function update() {
     for (let i = 0; i < categoriesInputs.length; i++) {
         categories.set(CATEGORIES_NAMES[i], categoriesInputs[i].value);
     }
-    console.log(categories);
 
     let ordonnedItems;
-    if (searchBarInput.value == "") {
+    if (searchValue == "") {
         ordonnedItems = filter(categories, items);
     }
     else {
-        ordonnedItems = search(searchBarInput.value, items);
+        ordonnedItems = search(searchValue, items);
     }
     
     updateItems(ordonnedItems);
@@ -220,18 +206,15 @@ function changeURL() {
 function initialize() {
     /* Fonction qui s'occupe de récupérer les paramètres dans l'url pour afficher la bonne page */
     var parameters = location.search.substring(1).split("&"); // .substring(1) pour enlever le "?"
-    console.log("location.search : " + location.search);
 
     for (let i = 0; i < parameters.length; i++) {
         let parameter = parameters[i].split("=");
         let pName = parameter[0]; // Car name il ne voulait pas
         let value = parameter[1];
-        console.log("name : " + pName);
         value = decodeURIComponent(decodeURIComponent(value));
-        console.log("value : ", value);
 
         if (pName == "search") {
-            searchBarInput.value = decodeURI(value);
+            searchValue = decodeURI(value);
         }
         else if (CATEGORIES_NAMES.includes(pName)) {
             let index = CATEGORIES_NAMES.indexOf(pName);
@@ -244,6 +227,7 @@ function initialize() {
 var items;
 var FILTERS_SECTION, ITEMS_SECTION;
 var searchBarInput;
+var searchValue = "";
 const CATEGORIES_NAMES = ["representation", "image", "materialite", "processus", "presentation"];
 var categoriesInputs;
 
@@ -258,7 +242,6 @@ window.addEventListener("load", async () => {
     /// On s'occupe des FILTRES et de la Search bar
     // Search bar 
     searchBarInput = document.querySelector("#search-bar");
-    console.log("searchBarInput : ", searchBarInput);
     //searchBarInput.addEventListener("input", update);
 
     // Catégories
@@ -272,8 +255,6 @@ window.addEventListener("load", async () => {
 
     initialize(); // Actualisation des filtres et de la seach bar en fonction de l'URL
     update(); // Acualisation des oeuvres en fonction des filtres et de la search bar
-
-    console.log("apparamment tout c'est bien passé");
 });
 
 

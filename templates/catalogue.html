@@ -12,73 +12,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oeuvres V10</title>
     <script src="/static/JAVASCRIPT/catalogue.js"></script>
-    <script src="/static/JAVASCRIPT/RECHERCHE.js"></script>
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        $(function(){
+            $("header").load("/header"); 
+            $("footer").load("/footer");
+        });
+    </script>
 </head>
 
 
 
 <body>
     <!-- Header : (UN ; DEUX ; TROIS) -->
-    <header>
-        <nav class="orga">
-
-            <!-- Un : (MENU ; LOGO) -->
-            <div class="un">
-
-                <!-- Logo -->
-                <div class="Logo">
-                    <a href="/" > <img src="/static/IMAGES/HEADER/Logo BOURIGAULT Jade.png" alt="Logo"> </a>
-                </div>
-            </div>
-            
-            <!-- Deux : (SEARCH-BAR ; LOUPE) -->
-            <div class="deux">
-                <!-- <form action="catalogue.html">  --> <!-- Avec le form il y avait un souci d'encondage de l'espace donc j'ai tout fait à partir de ton javascript-->
-                    <div class="search-bar">
-                        <input id="search-bar" type="text" value="" placeholder="Rechercher un article" name="search">    
-                        <input type="submit" value="Envoyer les données" id="submit0" style="display: none;">
-                        <label for="submit0">
-                            <img src="/static/IMAGES/HEADER/loupe.png" alt="Bouton de recherche" class="loupe-image"> 
-                        </label>  
-                    </div>
-                <!-- </form> --> 
-            </div>
-
-            <!-- Trois : (PANIER ; CONNEXION) -->
-            <div class="trois">
-
-                <!-- Panier : (ICON ; TITRE) -->
-                <div class="panier">
-                    <a href="/propos">
-                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                        <lord-icon
-                            src="https://cdn.lordicon.com/amascaoj.json"
-                            trigger="hover"
-                            colors="primary:#ffffff"
-                            state="hover-2"
-                            style="width:5vh;height:5vh">
-                        </lord-icon>
-                        <p> A propos </p>
-                    </a>
-                </div>
-
-                <div>
-                <!-- Connexion : (ICON ; TITRE) -->
-                <div class="connexion">
-                    <a href="/add">
-                        <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-                        <lord-icon
-                            src="https://cdn.lordicon.com/fpmskzsv.json"
-                            trigger="hover"
-                            colors="primary:#ffffff"
-                            style="width:5vh;height:5vh">
-                        </lord-icon>
-                        <p> Ajouter </p>
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <header></header>
 
     <main>
         <section class="filters-section">
@@ -116,12 +68,8 @@
         </section>
     </main>
 	
-<!-- Footer : () -->
+    <!-- Footer : () -->
     <footer>
-        <div class="footer1">
-        </div>
-        <div class="footer2">
-        </div>
     </footer>
 </body>
 </html>
