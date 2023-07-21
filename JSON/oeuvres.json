@@ -398,37 +398,5 @@
         "representation": "2",
         "src": "PICTURES/OEUVRES/PENONE_Giuseppe.png",
         "url": "alpi-maritime-continuera-a-crescere-tranne-che-in-quel-punto"
-    },
-    {
-        "author": "Vincent van Gogh",
-        "date": "jsp 2",
-        "dimensions": "jsp 1",
-        "id": 26,
-        "image": "5",
-        "lieu de conservation": "jsp 3",
-        "materialite": "2",
-        "materiau et support": "Huile sur toile",
-        "name": "Les Tournesols",
-        "presentation": "3",
-        "processus": "4",
-        "representation": "1",
-        "src": "PICTURES/OEUVRES/vincent_van_gogh_les_tournesols_4.jpg",
-        "url": "les-tournesols"
-    },
-    {
-        "author": "Vincent van Gogh",
-        "date": "jsp 2",
-        "dimensions": "jsp 1",
-        "id": 27,
-        "image": "4",
-        "lieu de conservation": "jsp 3",
-        "materialite": "2",
-        "materiau et support": "Huile sur toile",
-        "name": "La nuit \u00e9toil\u00e9e",
-        "presentation": "3",
-        "processus": "4",
-        "representation": "2",
-        "src": "PICTURES/OEUVRES/vincent_van_gogh_la_nuit_etoilee.jpg",
-        "url": "la-nuit-etoilee"
     }
 ]
